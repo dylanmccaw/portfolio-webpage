@@ -5,7 +5,7 @@ import { Title, List, Text } from '@mantine/core';
 function Blogs() {
   return (
     <>
-      <Title style={{color:"#248277", paddingBottom:"30px", fontFamily:'Space Mono'}} order={2}>Blogs</Title>
+      <Title style={{color:"#10b981be", paddingBottom:"30px", fontFamily:'Space Mono'}} order={2}>Blogs</Title>
       {blogs.length > 0 ? (
         <List spacing="md">
           {blogs.map((blog, index) => (

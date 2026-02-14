@@ -4,29 +4,34 @@ import About from './About';
 import Experience from './Experience';
 import Projects from './Projects';
 import Blogs from './Blogs';
-import Skills from './Skills';
 import Education from './Education';
 
 function RightSection({ sectionRefs }) {
-  const sectionStyle = { marginBottom: '4rem' };
   const dividerStyle = { 
-    borderTop: '3px dotted #248277',
-    paddingBottom: '15px',
+    borderTop: '2px dashed #10b981',
     opacity: 0.25,
     margin: '2rem 0'
   };
   
+  const sectionStyle = {
+    paddingBottom: '2rem'
+  };
+
+    const aboutSectionStyle = {
+    paddingBottom: '1rem'
+  };
+  
   return (
     <Box>
-      <div id="about" ref={(el) => (sectionRefs.current['about'] = el)} style={sectionStyle}>
+      <div id="about" ref={(el) => (sectionRefs.current['about'] = el)} style={aboutSectionStyle}>
         <About />
       </div>
       <Divider style={dividerStyle} />
-      <div id="experience" ref={(el) => (sectionRefs.current['experience'] = el)}>
+      <div id="experience" ref={(el) => (sectionRefs.current['experience'] = el)} style={sectionStyle}>
         <Experience />
       </div>
       <Divider style={dividerStyle} />
-      <div id="education" ref={(el) => (sectionRefs.current['education'] = el)}>
+      <div id="education" ref={(el) => (sectionRefs.current['education'] = el)} style={sectionStyle}>
         <Education />
       </div>
       <Divider style={dividerStyle} />
@@ -34,11 +39,7 @@ function RightSection({ sectionRefs }) {
         <Projects />
       </div>
       <Divider style={dividerStyle} />
-      <div id="skills" ref={(el) => (sectionRefs.current['skills'] = el)} style={sectionStyle}>
-        <Skills />
-      </div>
-      <Divider style={dividerStyle} />
-      <div id="blogs" ref={(el) => (sectionRefs.current['blogs'] = el)}>
+      <div id="blogs" ref={(el) => (sectionRefs.current['blogs'] = el)} style={sectionStyle}>
         <Blogs />
       </div>
     </Box>

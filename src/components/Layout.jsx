@@ -5,34 +5,47 @@ import { isMobile } from 'react-device-detect';
 import LeftSection from './LeftSection';
 import RightSection from './RightSection';
 
-
 function Layout({ toggleColorScheme, colorScheme }) {
   const [activeSection, setActiveSection] = useState('about');
   const sectionRefs = useRef({});
+  
+  const GAP = 200;
+  const HALF_GAP = GAP / 2;
 
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1,
+    const handleScroll = () => {
+      const sections = ['about', 'experience', 'education', 'projects', 'skills', 'blogs'];
+      const scrollPosition = window.scrollY + 200; // Offset to trigger earlier
+
+      // Find the section that is currently in view
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        const element = document.getElementById(section);
+        
+        if (element) {
+          const offsetTop = element.offsetTop;
+          
+          if (scrollPosition >= offsetTop) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+
+      // Handle the case when at the very top
+      if (window.scrollY < 100) {
+        setActiveSection('about');
+      }
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    }, options);
-
-    Object.values(sectionRefs.current).forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Call once on mount to set initial state
+    handleScroll();
 
     return () => {
-      Object.values(sectionRefs.current).forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -58,6 +71,7 @@ function Layout({ toggleColorScheme, colorScheme }) {
       >
         {colorScheme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
       </ActionIcon>
+
       {isMobile ? (
         <>
           <Box
@@ -66,7 +80,7 @@ function Layout({ toggleColorScheme, colorScheme }) {
               marginBottom: '50px',
             }}
           >
-            <LeftSection activeSection={activeSection} />
+            <LeftSection activeSection={activeSection} setActiveSection={setActiveSection} />
           </Box>
           <Box
             style={{
@@ -82,28 +96,28 @@ function Layout({ toggleColorScheme, colorScheme }) {
             width: '100%',
             maxWidth: '1300px',
             display: 'flex',
-            position: 'relative',
+            justifyContent: 'center',
+            gap: `${GAP}px`,
+            paddingTop: '180px',
+            paddingBottom: '20px',
           }}
         >
           <Box
             style={{
-              width: '30%',
+              flex: '1 1 0',
+              maxWidth: '600px',
               position: 'fixed',
-              top: 200,
-              left: 'calc(55% - 600px)',
-              height: 'calc(100vh - 160px)',
-              overflowY: 'auto',
+              right: `calc(50% + ${HALF_GAP}px)`,
+              height: 'fit-content',
             }}
           >
-            <LeftSection activeSection={activeSection} />
+            <LeftSection activeSection={activeSection} setActiveSection={setActiveSection} />
           </Box>
           <Box
             style={{
-              width: '100%',
-              marginLeft: '50%',
-              paddingLeft: 'calc(50% - 900px + 20%)',
-              paddingTop: '180px',
-              paddingBottom: '20px',
+              flex: '1 1 0',
+              maxWidth: '600px',
+              marginLeft: `calc(50% + ${HALF_GAP}px)`,
             }}
           >
             <RightSection sectionRefs={sectionRefs} />

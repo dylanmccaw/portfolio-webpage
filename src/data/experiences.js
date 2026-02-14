@@ -1,20 +1,29 @@
 export const experiences = [
   {
-    period: 'Jul 2021 - Present',
+    period: 'Nov 2025 - Present',
     title: 'Software Engineer',
     company: 'Leidos',
     companyLink: 'https://www.leidos.com/',
-    project: 'MET Police Cloud Integration Solution',
-    description: 'Led the implementation of multiple iterfaces on a secure cloud-based integration for the Metropolitan Police Forces Command & Control system, managing end-to-end interface deployment and ensuring seamless integration with existing systems. I took lead of many stakeholder meetings and testing sessions, facilitated successful deployments and addressed stakeholder needs.',
-    skills: ['.NET', 'C#', 'Azure Function Apps', 'Azure Service Bus', 'Azure Key Vault', 'Azure Application Insights', 'Azure SQL Server', 'Micro Service Architecture', 'REST Api', 'Postman', 'JSON/XML', 'NUnit', 'Moq', 'Terraform', 'Jenkins']
+    project: 'NATS Legacy Application Migration',
+    description: 'Co-led migration of a legacy .NET Framework 4.8/Angular application from VMs to Azure App Service (PaaS). Resolved 600+ compile errors and 270+ test failures, designed asynchronous solutions using Azure Service Bus and WebJobs to resolve timeout issues, and identified security vulnerabilities during pre-production testing.',
+    skills: ['.NET Framework', 'C#', 'Entity Framework', 'Azure App Service', 'Azure Service Bus', 'Azure WebJobs', 'IaaS to PaaS Migration', 'NUnit']
   },
   {
-    period: 'Jul 2018 - Jul 2021',
+    period: 'Oct 2022 - Nov 2025',
     title: 'Software Engineer',
     company: 'Leidos',
     companyLink: 'https://www.leidos.com/',
-    project: 'Scottish Government Case Handling System',
-    description: 'As a Full Stack Developer, I helped design and implement a React.js case handling system with a .NET Microservice backend for the Scottish Government - which is now live and used by 1000s of users. Using SCRUM and Agile methods, we ensured timely delivery and adaptability while closely collaborating with the client to refine requirements and meet their needs.',
-    skills: ['.NET', 'C#', 'NUnit', 'React', 'Redux', 'Jest', 'SQL Management Studio', 'MS Build', 'Team Foundation Server', 'Git' ]
+    project: 'Metropolitan Police Cloud Integration Solution',
+    description: 'Delivered a cloud-based integration layer between Metropolitan Police Command & Control platform and external systems. Developed microservices using C#/.NET, Azure Functions, and Azure Service Bus with resilient messaging patterns. Served as Subject Matter Expert for multiple interfaces, performed code reviews, and produced HLD/LLD documentation within a regulated environment.',
+    skills: ['.NET', 'C#', 'Azure Functions', 'Azure Service Bus', 'Azure Key Vault', 'Azure Application Insights', 'Azure SQL Server', 'Microservice Architecture', 'REST API', 'Postman', 'JSON/XML', 'NUnit', 'Moq', 'Terraform', 'Jenkins', 'Ansible']
+  },
+  {
+    period: 'Jul 2018 - Oct 2022',
+    title: 'Software Engineer',
+    company: 'Leidos',
+    companyLink: 'https://www.leidos.com/',
+    project: 'Scottish Government Case Management System',
+    description: 'Completed a 4-year Graduate Apprentice Scheme earning a First-Class BSc while working full-time. Developed full-stack microservices with .NET, React, and SQL Server for a live case management system. Acted as React SME, led front-end development, mentored junior engineers, and delivered client demonstrations.',
+    skills: ['.NET', 'C#', 'React', 'Redux', 'NUnit', 'Jest', 'SQL Server', 'Microservice Architecture', 'Git', 'TFS', 'Agile/SCRUM']
   }
 ];

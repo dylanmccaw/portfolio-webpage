@@ -40,7 +40,7 @@ body {
 
 /* Hover effect for icons */
 .icon-hover:hover svg {
-  color: #248277; /* Change icon color on hover */
+  color: #10b981; /* Change icon color on hover */
 }
 
 /* Container styling */
@@ -58,7 +58,7 @@ header {
 }
 
 .Typewriter__cursor {
-  color: #248277;
+  color: #10b981;
 }
 
 /* Headings styling */

@@ -1,11 +1,8 @@
 import { Text } from '@mantine/core';
 
-const highlightStyle = { 
+const highlightStyle = {
   fontWeight: 'bold',
-  borderBottom: '2px dashed #10b9818f',
-  paddingBottom: '2px',
-  display: 'inline-block',
-  lineHeight: '1.5'
+  color: '#10b981',
 };
 
 function About() {

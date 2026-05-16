@@ -1,8 +1,8 @@
+import '@mantine/core/styles.css';
 import React, { useEffect } from 'react';
 import { MantineProvider } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import Layout from './components/Layout';
-import '@mantine/core/styles.css';
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorage({

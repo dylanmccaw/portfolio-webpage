@@ -9,15 +9,11 @@ function Layout({ toggleColorScheme, colorScheme }) {
   const [activeSection, setActiveSection] = useState('about');
   const sectionRefs = useRef({});
   
-  const GAP = 200;
-  const HALF_GAP = GAP / 2;
-
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['about', 'experience', 'education', 'projects', 'skills', 'blogs'];
-      const scrollPosition = window.scrollY + 200; // Offset to trigger earlier
-
-      // Find the section that is currently in view
+      const scrollPosition = window.scrollY + 200;
+      
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         const element = document.getElementById(section);
@@ -31,24 +27,20 @@ function Layout({ toggleColorScheme, colorScheme }) {
           }
         }
       }
-
-      // Handle the case when at the very top
+      
       if (window.scrollY < 100) {
         setActiveSection('about');
       }
     };
-
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
     
-    // Call once on mount to set initial state
+    window.addEventListener('scroll', handleScroll);
     handleScroll();
-
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
+  
   return (
     <Container
       size="xl"
@@ -71,22 +63,13 @@ function Layout({ toggleColorScheme, colorScheme }) {
       >
         {colorScheme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
       </ActionIcon>
-
+      
       {isMobile ? (
         <>
-          <Box
-            style={{
-              width: '100%',
-              marginBottom: '50px',
-            }}
-          >
+          <Box style={{ width: '100%', marginBottom: '50px' }}>
             <LeftSection activeSection={activeSection} setActiveSection={setActiveSection} />
           </Box>
-          <Box
-            style={{
-              width: '100%',
-            }}
-          >
+          <Box style={{ width: '100%' }}>
             <RightSection sectionRefs={sectionRefs} />
           </Box>
         </>
@@ -94,32 +77,28 @@ function Layout({ toggleColorScheme, colorScheme }) {
         <Box
           style={{
             width: '100%',
-            maxWidth: '1300px',
-            display: 'flex',
-            justifyContent: 'center',
-            gap: `${GAP}px`,
-            paddingTop: '180px',
+            maxWidth: '1100px',
+            display: 'grid',
+            gridTemplateColumns: '40% 60%',
+            gap: '80px',
+            paddingTop: '120px',
             paddingBottom: '20px',
+            alignItems: 'start',
           }}
         >
           <Box
             style={{
-              flex: '1 1 0',
-              maxWidth: '600px',
               position: 'fixed',
-              right: `calc(50% + ${HALF_GAP}px)`,
+              top: '140px',
+              width: 'calc(40% - 50px)',
+              maxWidth: 'calc((1100px * 0.40) - 50px)',
               height: 'fit-content',
+              paddingRight: '40px',
             }}
           >
             <LeftSection activeSection={activeSection} setActiveSection={setActiveSection} />
           </Box>
-          <Box
-            style={{
-              flex: '1 1 0',
-              maxWidth: '600px',
-              marginLeft: `calc(50% + ${HALF_GAP}px)`,
-            }}
-          >
+          <Box style={{ gridColumn: 2 }}>
             <RightSection sectionRefs={sectionRefs} />
           </Box>
         </Box>

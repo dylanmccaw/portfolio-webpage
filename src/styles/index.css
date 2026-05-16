@@ -5,16 +5,15 @@
 :root {
   --bg-color: #FAFAFE;
   --text-color: #333333;
-  --icon-color: #000000; /* Default icon color for light mode */
+  --icon-color: #000000;
   --header-bg: #f0f0f0;
-  --button-bg: #4a90e2;
   --button-text: #ffffff;
 }
 
 .dark {
   --bg-color: #0a0a0b;
   --text-color: #ffffff;
-  --icon-color: #ffffff; /* Icon color for dark mode */
+  --icon-color: #ffffff;
   --header-bg: #222222;
   --button-bg: #61dafb;
   --button-text: #333333;
@@ -24,7 +23,6 @@
   background: #10b98173;
 }
 
-/* Apply Space Mono font globally */
 body {
   font-family: 'Space Mono', serif;
   background-color: var(--bg-color);
@@ -32,63 +30,11 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Styling for the icons */
 .icon-hover svg {
-  color: var(--icon-color); /* Use the variable for color */
-  transition: color 0.3s; /* Smooth transition for hover */
+  color: var(--icon-color);
+  transition: color 0.3s;
 }
 
-/* Hover effect for icons */
 .icon-hover:hover svg {
-  color: #10b981; /* Change icon color on hover */
-}
-
-/* Container styling */
-.App {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Header styling */
-header {
-  background-color: var(--header-bg);
-  padding: 20px;
-  text-align: center;
-}
-
-.Typewriter__cursor {
   color: #10b981;
 }
-
-/* Headings styling */
-h1, h2, h3 {
-  margin-bottom: 10px;
-}
-
-/* Sections styling */
-.experience, .projects {
-  margin-top: 40px;
-}
-
-.job, .project {
-  margin-bottom: 20px;
-}
-
-/* Button styling */
-.theme-toggle {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-/* Footer styling */
-footer {
-  margin-top: 40px;
-  text-align: center;
-}
-

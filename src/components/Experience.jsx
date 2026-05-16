@@ -68,12 +68,10 @@ function Experience() {
               </Box>
 
               {experience.project && (
-                <Text 
-                  size="sm" 
-                  style={{ 
-                    fontStyle: 'italic',
-                    color: '#5c5c5c'
-                  }}
+                <Text
+                  size="sm"
+                  color="dimmed"
+                  style={{ fontStyle: 'italic' }}
                 >
                   {experience.project}
                 </Text>
@@ -93,13 +91,14 @@ function Experience() {
                 {experience.skills.map((skill, skillIndex) => (
                   <Badge 
                     key={skillIndex} 
-                    variant="light"
-                    color="teal"
                     size="md"
                     radius="sm"
                     style={{
                       textTransform: 'none',
                       fontWeight: 500,
+                      backgroundColor: '#10b98133',
+                      color: '#10b981',
+                      border: 'none'
                     }}
                   >
                     {skill}

@@ -7,18 +7,19 @@ import Blogs from './Blogs';
 import Education from './Education';
 
 function RightSection({ sectionRefs }) {
-  const dividerStyle = { 
+  const dividerStyle = {
     borderTop: '2px dashed #10b981',
     opacity: 0.25,
-    margin: '2rem 0'
+    margin: '1.5rem 0'
   };
   
   const sectionStyle = {
-    paddingBottom: '2rem'
+    paddingBottom: '2rem',
+    paddingTop: '2rem'
   };
 
     const aboutSectionStyle = {
-    paddingBottom: '1rem'
+    paddingBottom: '2rem'
   };
   
   return (
@@ -34,14 +35,14 @@ function RightSection({ sectionRefs }) {
       <div id="education" ref={(el) => (sectionRefs.current['education'] = el)} style={sectionStyle}>
         <Education />
       </div>
-      <Divider style={dividerStyle} />
+      {/* <Divider style={dividerStyle} />
       <div id="projects" ref={(el) => (sectionRefs.current['projects'] = el)} style={sectionStyle}>
         <Projects />
       </div>
       <Divider style={dividerStyle} />
       <div id="blogs" ref={(el) => (sectionRefs.current['blogs'] = el)} style={sectionStyle}>
         <Blogs />
-      </div>
+      </div> */}
     </Box>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { projects } from '../data/projects'
-import { Title, Text, SimpleGrid, Badge, ActionIcon } from '@mantine/core';
+import { Title, Text, SimpleGrid, Badge, ActionIcon, Group } from '@mantine/core';
 import { ExternalLink } from 'tabler-icons-react';
 
 function Projects() {
@@ -48,13 +48,24 @@ function Projects() {
                   <Text size="sm" color="dimmed" style={{ marginBottom: '15px' }}>
                     {project.description}
                   </Text>
-                  <div>
+                  <Group gap="xs">
                     {project.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} color="#10b981" size="sm" style={{ marginRight: '10px', marginBottom: '10px' }}>
+                      <Badge
+                        key={skillIndex}
+                        size="md"
+                        radius="sm"
+                        style={{
+                          textTransform: 'none',
+                          fontWeight: 500,
+                          backgroundColor: '#10b98133',
+                          color: '#10b981',
+                          border: 'none'
+                        }}
+                      >
                         {skill}
                       </Badge>
                     ))}
-                  </div>
+                  </Group>
                 </div>
               </div>
             </div>

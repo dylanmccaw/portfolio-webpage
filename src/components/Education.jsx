@@ -16,10 +16,10 @@ function Education() {
         Education
       </Title>
       
-      <Stack spacing={64}>
+      <Stack gap={64}>
         {education.map((edu, index) => (
           <Box key={index}>
-            <Stack spacing="md">
+            <Stack gap="md">
               <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <Box>
                   <Text 

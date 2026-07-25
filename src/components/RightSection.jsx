@@ -32,14 +32,14 @@ function RightSection({ sectionRefs }) {
         <Experience />
       </div>
       <Divider style={dividerStyle} />
-      <div id="education" ref={(el) => (sectionRefs.current['education'] = el)} style={sectionStyle}>
-        <Education />
-      </div>
-      {/* <Divider style={dividerStyle} />
       <div id="projects" ref={(el) => (sectionRefs.current['projects'] = el)} style={sectionStyle}>
         <Projects />
       </div>
       <Divider style={dividerStyle} />
+      <div id="education" ref={(el) => (sectionRefs.current['education'] = el)} style={sectionStyle}>
+        <Education />
+      </div>
+      {/* <Divider style={dividerStyle} />
       <div id="blogs" ref={(el) => (sectionRefs.current['blogs'] = el)} style={sectionStyle}>
         <Blogs />
       </div> */}
